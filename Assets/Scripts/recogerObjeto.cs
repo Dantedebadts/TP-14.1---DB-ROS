@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class recogerObjeto : MonoBehaviour
 {
+    public int paquetescoleccionados = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,10 +17,11 @@ public class recogerObjeto : MonoBehaviour
         
     }
 
-    void OnCollisionEnter(Collision col) {
-        Debug.Log(gameObject.name + " colisionaste con " + col.gameObject.name);
+    void OnTriggerEnter(Collider col) {
         if(col.gameObject.CompareTag("paquete")) {
             Destroy(col.gameObject);
+            paquetescoleccionados++;
+            Debug.Log(paquetescoleccionados);
         }
     }
 }
