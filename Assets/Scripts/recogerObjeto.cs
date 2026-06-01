@@ -1,10 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using TMPro;
 public class recogerObjeto : MonoBehaviour
 {
     public int paquetescoleccionados = 0;
+    public TextMeshProUGUI paquetestxt;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,7 +22,7 @@ public class recogerObjeto : MonoBehaviour
         if(col.gameObject.CompareTag("paquete")) {
             Destroy(col.gameObject);
             paquetescoleccionados++;
-            Debug.Log(paquetescoleccionados);
+            paquetestxt.text = "Paquetes coleccionados: " + paquetescoleccionados;
         }
     }
 }
