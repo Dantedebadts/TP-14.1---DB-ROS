@@ -25,7 +25,6 @@ public class GameScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(corriendo);
         if (corriendo == true)
         {
             if (tiempo > 0)
@@ -48,7 +47,7 @@ public class GameScript : MonoBehaviour
         if(col.gameObject.CompareTag("paquete")) {
             Destroy(col.gameObject);
             paquetescoleccionados++;
-            paquetestxt.text = "Paquetes coleccionados: " + paquetescoleccionados;
+            paquetestxt.text = "Paquetes: " + paquetescoleccionados;
             if(paquetescoleccionados >= 5){
                 corriendo = false;
                 PantallaGanaste.SetActive(true);
