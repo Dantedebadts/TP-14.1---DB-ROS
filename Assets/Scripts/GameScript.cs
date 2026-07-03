@@ -41,7 +41,10 @@ public class GameScript : MonoBehaviour
                 PantallaGameOver.SetActive(true);
             }
         }
-        
+                if (Input.GetKeyDown(KeyCode.R))
+        {
+            Reiniciar();
+        }  
     }
      void OnTriggerEnter(Collider col) {
         if(col.gameObject.CompareTag("paquete")) {
@@ -58,5 +61,11 @@ public class GameScript : MonoBehaviour
     {
         string nombreEscenaActual = SceneManager.GetActiveScene().name;
         SceneManager.LoadScene(nombreEscenaActual);
+    }
+        void Reiniciar()
+    {
+        Scene escenaActiva = SceneManager.GetActiveScene();
+        
+        SceneManager.LoadScene(escenaActiva.name);
     }
 }
